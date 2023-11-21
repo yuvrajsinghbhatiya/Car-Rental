@@ -18,6 +18,10 @@
   --gradient: linear-gradient(#0283c4, #029cea);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -32,10 +36,11 @@ html::-webkit-scrollbar-thumb {
 }
 
 section {
-  padding: 50px 100px;
+  padding: 90px 100px;
 }
 
 header {
+  position: fixed;
   width: 100%;
   top: 0;
   right: 0;
@@ -45,6 +50,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 100px;
+  background-color: #eeeff1;
 }
 
 .logo img {
@@ -66,6 +72,11 @@ header {
   color: var(--text-color);
   font-weight: 500;
   font-family: "Rubik", sans-serif;
+}
+
+.navbar .sign-in,
+.navbar .sign-up {
+  display: none;
 }
 
 .navbar a::after {
@@ -124,7 +135,7 @@ header {
 
 .home {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background: url(/assets/img/bg.webp);
   background-size: cover;
   background-position: center right;
@@ -132,7 +143,6 @@ header {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 0.8rem;
 }
 
 .text {
@@ -327,11 +337,6 @@ header {
   color: #fff;
 }
 
-.ride {
-  padding: 50px 60px;
-  margin-top: 7rem;
-}
-
 .heading {
   text-align: center;
 }
@@ -388,10 +393,6 @@ header {
   color: #6c6969;
   font-family: "Rubik", sans-serif;
   margin-top: 1rem;
-}
-
-.cars {
-  margin-top: 4rem;
 }
 
 .cars-container {
@@ -524,23 +525,16 @@ header {
   color: #fff;
 }
 
-.about {
-  padding: 50px 100px;
-  margin-top: 2rem;
-}
-
 .about-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 2rem;
   align-items: center;
   gap: 3rem;
-  margin-top: 2rem;
 }
 
 .about-img img {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -577,11 +571,6 @@ header {
 .about-btn:hover {
   background: var(--second-color);
   color: #fff;
-}
-
-.reviews {
-  padding: 50px 100px;
-  margin-top: 5rem;
 }
 
 .reviews-container {
@@ -642,7 +631,7 @@ footer {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 27fr 21fr 21fr 21fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 9rem;
   justify-content: center;
   text-align: left;
@@ -919,7 +908,7 @@ footer {
   }
 
   .text p {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .btn-container {
@@ -965,6 +954,12 @@ footer {
 
   .about {
     padding: 50px 40px;
+  }
+
+  .about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .about-container {
@@ -1014,7 +1009,7 @@ footer {
     justify-content: center;
   }
 
-  .cars-box{
+  .cars-box {
     padding: 1rem;
   }
 
@@ -1047,11 +1042,9 @@ footer {
     font-size: 2.5rem;
   }
 
-
   .home {
     background: none;
     grid-template-columns: 1fr;
-    margin-top: -4rem;
   }
 
   .home .text {
@@ -1071,8 +1064,7 @@ footer {
   }
 
   .home .text p {
-    font-size: .9rem;
-
+    font-size: 0.9rem;
   }
 
   .home .btn-container {
@@ -1090,7 +1082,7 @@ footer {
     margin-left: 0.5rem;
   }
 
-  .form-container{
+  .form-container {
     padding: 2rem 2rem;
     margin-top: 0rem;
   }
@@ -1098,7 +1090,7 @@ footer {
   .form-container form {
     position: unset;
   }
-  
+
   header .navbar {
     position: absolute;
     top: -500px;
@@ -1124,13 +1116,47 @@ footer {
   }
 
   .navbar.active {
-    top: 7rem;
+    top: 5rem;
     background-color: #eeeff1;
   }
 
   .navbar.active a {
-    padding: 1.5rem;
-    font-size: 1.2rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .navbar.active .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .navbar.active .sign-in {
+    display: flex;
+    padding: 0.5rem 0.8rem;
+    background: var(--main-color);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Rubik", sans-serif;
+    outline: none;
+  }
+
+  .navbar.active .sign-up {
+    display: flex;
+    padding: 0.5rem 0.8rem;
+    background: #010103;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Rubik", sans-serif;
+    outline: none;
   }
 
   .navbar a {
@@ -1143,6 +1169,7 @@ footer {
     background: var(--gradient);
     color: #fff;
     border: none;
+    border-radius: 3px;
   }
   .navbar a::after {
     display: none;
@@ -1182,7 +1209,7 @@ footer {
     justify-content: center;
   }
 
-  .cars-box{
+  .cars-box {
     padding: 1rem;
   }
 
@@ -1191,6 +1218,11 @@ footer {
     text-align: center;
   }
 
+  .about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .footer-content {
     grid-template-columns: 1fr;
@@ -1198,8 +1230,6 @@ footer {
     text-align: center;
     justify-content: center;
   }
-
-
 }
 
 @media (max-width: 576px) {
@@ -1210,62 +1240,61 @@ footer {
     padding-top: 2rem;
   }
 
-  .form-container form{
+  .form-container form {
     grid-template-columns: 1fr;
   }
 
-  .ride{
+  .ride {
     padding: 50px 20px;
   }
 
-  .ride-container{
+  .ride-container {
     grid-template-columns: 1fr;
   }
 
-  .heading h1{
+  .heading h1 {
     font-size: 2.2rem;
   }
 
-  .heading span{
+  .heading span {
     font-size: 1.2rem;
   }
 
-
-  .ride-container .box img{
+  .ride-container .box img {
     width: 100px;
     height: 80px;
   }
 
-  .ride-container .box h2{
+  .ride-container .box h2 {
     font-size: 1.2rem;
   }
 
-  .ride-container .box p{
+  .ride-container .box p {
     font-size: 0.9rem;
   }
 
-  .about{
+  .about {
     padding: 50px 20px;
   }
 
-  .about-text{
+  .about-text {
     padding: 2rem 2rem;
   }
 
-  .about-text p{
+  .about-text p {
     font-size: 0.9rem;
     margin-top: 1.5rem;
   }
 
-  .reviews-container{
+  .reviews-container {
     grid-template-columns: 1fr;
   }
 
-  .reviews-container .reviews-box h2{
+  .reviews-container .reviews-box h2 {
     font-size: 1.1rem;
   }
 
-  .reviews-container .reviews-box p{
+  .reviews-container .reviews-box p {
     font-size: 0.8rem;
   }
 
@@ -1278,11 +1307,11 @@ footer {
     justify-content: center;
   }
 
-  .cars-box{
+  .cars-box {
     padding: 1rem;
   }
 
- .cars-desc {
+  .cars-desc {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
   }
@@ -1304,27 +1333,28 @@ footer {
     padding-top: 2rem;
   }
 
-  .form-container form{
+  .form-container form {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 
-  .form-container form input{
+  .form-container form input {
     padding: 1rem 1rem;
   }
 
-  .ride{
+  .ride {
     padding: 50px 20px;
   }
 
-  .ride-container{
+  .ride-container {
     grid-template-columns: 1fr;
   }
 
-  .heading h1{
+  .heading h1 {
     font-size: 2.2rem;
   }
 
-  .heading span{
+  .heading span {
     font-size: 1.2rem;
   }
 
@@ -1337,52 +1367,49 @@ footer {
     justify-content: center;
   }
 
-  .cars-box{
+  .cars-box {
     padding: 1rem;
   }
 
- .cars-desc {
+  .cars-desc {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
   }
-
-
- 
-  
 }
 
 @media (max-width: 438px) {
-
-  .header{
+  .header {
     padding: 2rem 2rem;
   }
-  .home{
-    margin-top: -5rem;
-  }
 
-  .home .text h3{
+  .home .text h3 {
     font-size: 1.4rem;
   }
 
-  .home .text h1{
+  .home .text h1 {
     font-size: 3.6rem;
   }
 
-  .home .text span{
+  .home .text span {
     font-size: 3.6rem;
   }
 
-  .home .text p{
+  .home .text p {
     font-size: 0.8rem;
   }
 
-  .home .btn-container{
+  .home .btn-container {
     flex-direction: row;
   }
 
-  .home .btn-container .btn1, .home .btn-container .btn2{
+  .home .btn-container .btn1,
+  .home .btn-container .btn2 {
     font-size: 0.7rem;
     gap: 0.5rem;
+  }
+
+  .form-container form input{
+    width: 100%;
   }
 
   .cars {
@@ -1394,13 +1421,12 @@ footer {
     justify-content: center;
   }
 
-  .cars-box{
+  .cars-box {
     padding: 1rem;
   }
 
- .cars-desc {
+  .cars-desc {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
   }
-
 }
