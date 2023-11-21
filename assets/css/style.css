@@ -36,7 +36,6 @@ section {
 }
 
 header {
-  position: fixed;
   width: 100%;
   top: 0;
   right: 0;
@@ -46,7 +45,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 100px;
-  background: #eeeff1;
 }
 
 .logo img {
@@ -63,7 +61,7 @@ header {
 }
 
 .navbar a {
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 10px 20px;
   color: var(--text-color);
   font-weight: 500;
@@ -126,8 +124,7 @@ header {
 
 .home {
   width: 100%;
-  min-height: 100vh;
-  position: relative;
+  height: 90vh;
   background: url(/assets/img/bg.webp);
   background-size: cover;
   background-position: center right;
@@ -139,7 +136,10 @@ header {
 }
 
 .text {
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  z-index: 3;
 }
 
 .text h3 {
@@ -173,8 +173,8 @@ header {
 
 .btn-container {
   display: flex;
-  align-items: center;
   gap: 1rem;
+  font-family: "Rubik", sans-serif;
 }
 
 .btn1 svg {
@@ -542,7 +542,6 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
 }
 
 .about-text span {
@@ -661,7 +660,7 @@ footer {
   line-height: 1.2;
   font-family: "Rubik", sans-serif;
   transition: all 0.2s;
-  display: flex;
+  display: -webkit-box;
   align-items: center;
   gap: 0.5rem;
 }
@@ -816,6 +815,19 @@ footer {
 /* Responsive */
 
 @media (max-width: 1200px) {
+  header {
+    padding: 18px 40px;
+    font-size: 0.8rem;
+  }
+
+  .navbar a {
+    padding: 10px 10px;
+    font-size: 0.9rem;
+  }
+
+  .home {
+    background-position: center;
+  }
   .ride-container {
     padding: 0 1rem;
   }
@@ -827,95 +839,266 @@ footer {
     grid-gap: 2rem;
     text-align: left;
   }
+
+  .cars-div {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media (max-width: 1100px) {
   header {
     padding: 18px 40px;
+    font-size: 0.8rem;
   }
   section {
     padding: 50px 40px;
   }
 
-  .footer{
+  .footer {
     padding: 50px 40px;
   }
+  .input-btn {
+    padding: 0.8rem 1.8rem;
+  }
 
-  .footer-content{
+  .btn-container {
+    flex-direction: row;
+  }
+  .ride-container {
+    padding: 0 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer-content {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 2rem;
     text-align: center;
   }
+
+  .footer-content__1 ul li a {
+    text-align: center;
+  }
+  .cars {
+    padding: 50px 40px;
+  }
+  .cars-div {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-@media (max-width: 881px) {
+@media (max-width: 992px) {
+  .header {
+    padding: 18px 40px;
+    font-size: 0.8rem;
+  }
+
+  .navbar a {
+    padding: 10px 10px;
+    font-size: 0.9rem;
+  }
+
   .home {
-    background-position: left;
+    background-position: center;
+  }
+
+  .text {
+    margin-top: 2rem;
+    max-width: 50rem;
+  }
+
+  .text h3 {
+    font-size: 1rem;
+  }
+
+  .text h1 {
+    font-size: 3.5rem;
+  }
+
+  .text span {
+    font-size: 3.5rem;
+  }
+
+  .text p {
+    font-size: .8rem;
+  }
+
+  .btn-container {
+    flex-direction: row;
+  }
+
+  .btn1,
+  .btn2 {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .btn1 svg,
+  .btn2 svg {
+    margin-left: 0.7rem;
   }
 
   .form-container form {
     bottom: 0.2;
     left: 40px;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-  .ride-container {
-    padding: 0 1rem;
-    grid-template-columns: 1fr;
-  }
+
   .ride {
     padding: 50px 40px;
   }
 
-  .footer{
+  .ride-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews-container .box {
+    padding: 2rem;
+  }
+
+  .ride-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .ride-container p {
+    font-size: 1rem;
+  }
+
+  .about {
     padding: 50px 40px;
   }
 
-  .footer-content{
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .reviews {
+    padding: 50px 40px;
+  }
+
+  .reviews-container {
+    grid-template-columns: 1fr 1fr;
     text-align: center;
   }
 
-  .footer-content li a{
+  .footer {
+    padding: 50px 40px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-content__1 ul li a {
     text-align: center;
   }
 
-  .footer-content__1{
+  .footer-content__1 {
     margin-bottom: 1.5rem;
   }
 
-  .footer-content__2{
-    margin-bottom: 1.5rem;
-  }
-  
-
-  .footer-content__3{
+  .footer-content__2 {
     margin-bottom: 1.5rem;
   }
 
+  .footer-content__3 {
+    margin-bottom: 1.5rem;
+  }
+
+  .cars-div {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+
+  .cars-box{
+    padding: 1rem;
+  }
+
+  .cars-desc {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+
+  .cars-desc span {
+    display: -webkit-box;
+  }
 }
 
 @media (max-width: 768px) {
   header {
-    padding: 11px 40px;
+    padding: 2rem 4rem;
   }
 
   #menu-icon {
     display: initial;
+    font-size: 2.5rem;
+    margin-top: 1rem;
   }
 
-  .login {
+  .login,
+  .register {
     display: none;
   }
   .text h1 {
     font-size: 2.5rem;
   }
+
+
   .home {
+    background: none;
     grid-template-columns: 1fr;
+    margin-top: -4rem;
   }
+
+  .home .text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home .text h3 {
+    font-size: 1.2rem;
+  }
+  .home .text h1 {
+    font-size: 4rem;
+  }
+
+  .home .text span {
+    font-size: 4rem;
+  }
+
+  .home .text p {
+    font-size: .9rem;
+
+  }
+
+  .home .btn-container {
+    flex-direction: row;
+  }
+
+  .home .btn1,
+  .home .btn2 {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .home .btn1 svg,
+  .home .btn2 svg {
+    margin-left: 0.5rem;
+  }
+
+  .form-container{
+    padding: 2rem 2rem;
+    margin-top: 0rem;
+  }
+
   .form-container form {
     position: unset;
   }
+  
   header .navbar {
     position: absolute;
     top: -500px;
@@ -928,66 +1111,296 @@ footer {
     transition: 0.2 ease;
     text-align: left;
   }
-  .navbar.active{
-    top: 100%;
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
   }
-  .navbar a{
+
+  .navbar.active {
+    top: 7rem;
+    background-color: #eeeff1;
+  }
+
+  .navbar.active a {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .navbar a {
     padding: 1rem;
     margin: 1rem;
     display: block;
     text-align: center;
   }
-  .navbar a:hover{
-    background: var(--main-color);
+  .navbar a:hover {
+    background: var(--gradient);
     color: #fff;
     border: none;
   }
-  .navbar a::after{
+  .navbar a::after {
     display: none;
   }
-  .heading span{
+  .heading span {
     font-size: 0.9rem;
     font-weight: 600;
   }
-  .heading h1{
+  .heading h1 {
     font-size: 1.4rem;
   }
-  .about-container{
+  .about-container {
     grid-template-columns: 1fr;
     text-align: center;
+    margin-top: 5rem;
   }
-  .about-img{
+  .about-img {
     padding: 1rem;
-    order: 2;
   }
+  .ride {
+    padding: 50px 40px;
+  }
+  .ride-container {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-container .box {
+    padding: 2rem;
+  }
+
+  .cars {
+    padding: 50px 40px;
+  }
+
+  .cars-div {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .cars-box{
+    padding: 1rem;
+  }
+
+  .cars-desc {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+
 }
 
 @media (max-width: 576px) {
-.form-container{
-  padding-top: 2rem;
-}
-}
-
-@media (max-width: 480px) {
-  header{
-    padding: 5px 14px;
+  .header {
+    padding: 2rem 4rem;
   }
-  .logo img{
-    width: 40px;
-    height: 40px;
+  .form-container {
+    padding-top: 2rem;
   }
 
-  section{
+  .form-container form{
+    grid-template-columns: 1fr;
+  }
+
+  .ride{
     padding: 50px 20px;
   }
 
-  .header-btn .login{
-    padding: 8px 15px;
-    font-size: 14px;
-    font-weight: 500;
+  .ride-container{
+    grid-template-columns: 1fr;
   }
-  .text h1{
-    font-size: 2rem;
+
+  .heading h1{
+    font-size: 2.2rem;
+  }
+
+  .heading span{
+    font-size: 1.2rem;
+  }
+
+
+  .ride-container .box img{
+    width: 100px;
+    height: 80px;
+  }
+
+  .ride-container .box h2{
+    font-size: 1.2rem;
+  }
+
+  .ride-container .box p{
+    font-size: 0.9rem;
+  }
+
+  .about{
+    padding: 50px 20px;
+  }
+
+  .about-text{
+    padding: 2rem 2rem;
+  }
+
+  .about-text p{
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .reviews-container{
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-container .reviews-box h2{
+    font-size: 1.1rem;
+  }
+
+  .reviews-container .reviews-box p{
+    font-size: 0.8rem;
+  }
+
+  .cars {
+    padding: 50px 40px;
+  }
+
+  .cars-div {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .cars-box{
+    padding: 1rem;
+  }
+
+ .cars-desc {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 2rem 4rem;
+  }
+
+  .form-container {
+    padding-top: 2rem;
+  }
+
+  .form-container form{
+    grid-template-columns: 1fr;
+  }
+
+  .form-container form input{
+    padding: 1rem 1rem;
+  }
+
+  .ride{
+    padding: 50px 20px;
+  }
+
+  .ride-container{
+    grid-template-columns: 1fr;
+  }
+
+  .heading h1{
+    font-size: 2.2rem;
+  }
+
+  .heading span{
+    font-size: 1.2rem;
+  }
+
+  .cars {
+    padding: 50px 40px;
+  }
+
+  .cars-div {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .cars-box{
+    padding: 1rem;
+  }
+
+ .cars-desc {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+
+
+ 
+  
+}
+
+@media (max-width: 438px) {
+
+  .header{
+    padding: 2rem 2rem;
+  }
+  .home{
+    margin-top: -5rem;
+  }
+
+  .home .text h3{
+    font-size: 1.4rem;
+  }
+
+  .home .text h1{
+    font-size: 3.6rem;
+  }
+
+  .home .text span{
+    font-size: 3.6rem;
+  }
+
+  .home .text p{
+    font-size: 0.8rem;
+  }
+
+  .home .btn-container{
+    flex-direction: row;
+  }
+
+  .home .btn-container .btn1, .home .btn-container .btn2{
+    font-size: 0.7rem;
+    gap: 0.5rem;
+  }
+
+  .cars {
+    padding: 50px 40px;
+  }
+
+  .cars-div {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .cars-box{
+    padding: 1rem;
+  }
+
+ .cars-desc {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
   }
 
 }
