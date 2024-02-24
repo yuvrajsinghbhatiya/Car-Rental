@@ -29,5 +29,5 @@ This is a simple car rental website. It is a static website with no backend. It 
 ## Hosted Url-
 
 ```
-https://car-rental-topaz-six.vercel.app/
+https://cars-rentals.vercel.app/
 ```
