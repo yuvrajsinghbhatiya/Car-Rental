@@ -15,7 +15,7 @@ This is a simple car rental website. It is a static website with no backend. It 
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yvrjbhatiya/Car-Rental
+   git clone https://github.com/yuvrajsinghbhatiya/Car-Rental
 
    ```
 
